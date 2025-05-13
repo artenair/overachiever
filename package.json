@@ -1,15 +1,17 @@
 {
-  "name": "discord-achievements",
-  "version": "1.0.0",
-  "description": "A discord bot that lets you send achievement badges",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Artenair",
-  "license": "WTFPL",
-  "dependencies": {
-    "discord.js": "^14.19.3",
-    "dotenv": "^16.5.0"
-  }
+    "name": "discord-achievements",
+    "type": "module",
+    "version": "1.0.0",
+    "description": "A discord bot that lets you send achievement badges",
+    "main": "index.js",
+    "scripts": {
+        "bot": "node src/main.js",
+        "deploy": "node src/deploy.js"
+    },
+    "author": "Artenair",
+    "license": "WTFPL",
+    "dependencies": {
+        "discord.js": "^14.19.3",
+        "dotenv": "^16.5.0"
+    }
 }
