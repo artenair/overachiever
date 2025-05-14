@@ -3,14 +3,18 @@ import { Client, Collection, Events, GatewayIntentBits, REST, Routes } from 'dis
 export default class BotGateway {
 
     constructor() {
-        this.client = new Client({ intents: [GatewayIntentBits.Guilds] });
+        this.client = new Client({ intents: [
+            GatewayIntentBits.Guilds,
+            GatewayIntentBits.GuildMembers,
+        ] });
         this.client.commands = new Collection;
+    }
 
+    setup() {
         this.client.once(Events.ClientReady, readyClient => {
             console.log(`Ready! Logged in as ${readyClient.user.tag}`);
         });
-
-        this.client.on(Events.InteractionCreate, this.handleInteraction)
+        this.client.on(Events.InteractionCreate, this.handleInteraction.bind(this))
     }
 
     async handleInteraction (interaction) {
@@ -23,7 +27,7 @@ export default class BotGateway {
         }
 
         try {
-            await command.execute(interaction);
+            await command.execute(interaction, this.client);
         } catch (error) {
             console.error(error);
             if (interaction.replied || interaction.deferred) {

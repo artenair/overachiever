@@ -6,12 +6,14 @@
     "main": "index.js",
     "scripts": {
         "bot": "node src/main.js",
-        "deploy": "node src/deploy.js"
+        "deploy": "node src/deploy.js",
+        "test": "node src/test.js"
     },
     "author": "Artenair",
     "license": "WTFPL",
     "dependencies": {
         "discord.js": "^14.19.3",
-        "dotenv": "^16.5.0"
+        "dotenv": "^16.5.0",
+        "sharp": "^0.34.1"
     }
 }
