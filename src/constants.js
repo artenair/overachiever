@@ -13,7 +13,7 @@ if(process.env.DISCORD_DEVELOPMENT_GUILD_ID) {
    allowedChannels[process.env.DISCORD_DEVELOPMENT_GUILD_ID] = [ '1372684490022981763' ];
 }
 
-if(process.env.DISCORD_DEVELOPMENT_GUILD_ID) {
+if(process.env.DISCORD_PRODUCTION_GUILD_ID) {
    allowedChannels[process.env.DISCORD_PRODUCTION_GUILD_ID] = [ '1370757771133194270' ];
 }
 
