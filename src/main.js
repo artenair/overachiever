@@ -6,7 +6,6 @@ const bot = new BotGateway();
 bot.setup();
 
 const DISCORD_TOKEN = process.env.DISCORD_TOKEN;
-const DISCORD_TOKEN = process.env.DISCORD_TOKEN;
 const DISCORD_APPLICATION_ID = process.env.DISCORD_APPLICATION_ID;
 
 if(process.env.DISCORD_PRODUCTION_GUILD_ID) {
