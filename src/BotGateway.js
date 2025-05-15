@@ -56,13 +56,13 @@ export default class BotGateway {
         this.client.login(token);
     }
 
-    async deploy(token, appId, commands) {
+    async deploy(token, appId, guildId, commands) {
         try {
             const rest = new REST().setToken(token);
             const body = commands.filter(this.isValidCommand).map((command) => command.data.toJSON());
 
             const data = await rest.put(
-                Routes.applicationCommands(appId),
+                Routes.applicationGuildCommands(appId, guildId),
                 { body },
             );
             console.log(`Successfully reloaded ${data.length} application (/) commands.`);
