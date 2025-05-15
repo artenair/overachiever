@@ -11,7 +11,7 @@ export default class BadgeFactory {
         const buffer = await fs.readFile(templatePath);
         const data = buffer.toString("utf8");
         const placeholderHandler = new PlaceholderHandler;
-        const instance = placeholderHandler.replace(data, {prize, title, description});
+        const instance = placeholderHandler.replace(data, {prize, title, description, color});
         return await sharp(Buffer.from(instance, "utf8")).png().toBuffer();
     }
 }
