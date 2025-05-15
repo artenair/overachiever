@@ -3,6 +3,7 @@ import { ActionRowBuilder, Events, ModalBuilder } from 'discord.js';
 import { StringSelectMenuBuilder, StringSelectMenuOptionBuilder } from 'discord.js';
 import { TextInputBuilder, TextInputStyle } from 'discord.js';
 import { AttachmentBuilder } from 'discord.js';
+import { colors } from "../constants.js";
 import BadgeFactory from "../Factories/BadgeFactory.js";
 
 export default {
@@ -18,11 +19,7 @@ export default {
             option.setName('color')
             .setDescription('Select a color')
             .setRequired(true)
-            .addChoices(
-                { name: 'Gold', value: '#FFD700' },
-                { name: 'Silver', value: '#C0C0C0' },
-                { name: 'Bronze', value: '#CD7F32' }
-            )
+            .addChoices(...colors)
         )
     ,
     async execute (interaction, client) {
